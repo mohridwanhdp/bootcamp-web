@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function hitung(){
+                var angka1 = document.getElementById("angka1").value;
+                var angka2 = document.getElementById("angka2").value;
+                var operator = document.getElementById("operator").value;
+                var result;
+                if(operator === "+"){
+                    result = Number(angka1) + Number(angka2);
+                }
+                else if(operator === "-"){
+                    result = angka1 - angka2;
+                }
+                else if(operator === "*"){
+                    result = angka1 * angka2;
+                }
+                else if(operator === "/"){
+                    result = angka1 / angka2;
+                }
+
+                document.getElementById("hasil").innerHTML = result;                
+            }
+
+            function klikGambar(e){
+                document.getElementById("hasil-klik").innerHTML = "Anda mengklik " + e;
+            }
+        </script>
+        <style>
+                img {
+                    height : 100px;
+                }
+                
+        </style>
+    </head>
+    <body>
+        <div>
+            <input id="angka1" type="number"/>
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input id="angka2"type="number"/>
+            <button onClick="hitung()">Hitung</button>
+            <div id="hasil"></div>
+        </div>
+        <div>
+            <div>
+                    <img src="./img/bali.png" onclick="klikGambar('Bali')"/>    
+                    <img src="./img/jateng.png" onclick="klikGambar('Jawa Tengah')"/>
+                    <img src="./img/lampung.png" onclick="klikGambar('Lampung')"/> 
+            </div>               
+            <div id="hasil-klik"></div>
+        </div>            
+    </body>
+</html>
