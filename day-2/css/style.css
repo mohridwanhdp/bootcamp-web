@@ -10,10 +10,12 @@ button {
   }
 
 #button-map {
-    position: absolute;
+    position: relative;
     z-index : 2;
     padding: 5px;
-    transform: translate(50vw,0);
+    width: 50%;
+    margin: 0 auto;
+    text-align : center;
 }
 
 .button-change {
