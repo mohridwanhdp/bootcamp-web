@@ -1,0 +1,14 @@
+#button-map {
+    position: absolute;
+    z-index : 2;
+    padding: 5px;
+    left: 50vh;
+}
+
+.button-change {
+    background-color: #1D63A2;
+    color : white;
+    border-radius: 5px;
+    font-size: 18px;    
+    height: 36px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Display a map on a webpage</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link href="./css/style.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+      }
+    </style>
+
+    
+
+  </head>
+
+  <body>
+    <div>
+      <div id="map">
+        <div id="button-map">
+          <button class="button-change" onclick="changeMap('streets-v11')">
+            Street
+          </button>
+          <button class="button-change" onclick="changeMap('satellite-v9')">
+            Satellite
+          </button>
+        </div>
+      </div>
+      <script type="text/javascript">
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoibW9ocmlkd2FuaGRwIiwiYSI6ImNrMDRvaGwzdDA0dDkzaG9tNnA3dmViODQifQ.qa1W5PaDaHzLnqIXbAM7zw";
+        const map = new mapboxgl.Map({
+          container: "map", // container ID
+          style: "mapbox://styles/mapbox/streets-v11", // style URL
+          center: [-74.5, 40], // starting position [lng, lat]
+          zoom: 9 // starting zoom
+        });
+        map.addControl(
+          new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+          })
+        );
+        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.FullscreenControl());
+       function changeMap(basemap){
+        map.setStyle('mapbox://styles/mapbox/' + basemap);
+       }
+      </script>
+    </div>
+  </body>
+</html>
