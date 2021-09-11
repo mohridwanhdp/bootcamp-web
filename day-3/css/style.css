@@ -1,0 +1,45 @@
+body {
+    margin : 0;
+    padding : 0;
+}
+
+#map {
+    width: 100%;
+    top : 0;
+    bottom : 0;
+    position: absolute;
+    z-index: 1;
+}
+#button-map {
+    position : relative;
+    z-index : 2;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding : 5px;
+}
+button {
+    background: transparent;
+    box-shadow : 0px 0px 0px transparent;
+    border : 0px solid transparent;
+    text-shadow : 0px 0px 0px transparent;
+}
+.button-change {
+    background-color: #1D63A2;
+    color : white;
+    border-radius: 5px;
+    font-size : 18px;
+    height: 36px;
+    cursor : pointer;
+}
+
+#sidebar {
+    height : 100%;
+    width: 200px;
+    z-index: 2;
+    background-color: #B3D0E9;
+    position: absolute;
+    padding : 10;
+    font-size: 18px;
+    /* color : white; */
+}
